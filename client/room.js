@@ -43,13 +43,13 @@ function do_change1() {
             document.getElementById("next").hidden = false;
             document.getElementById("chat").readOnly = true;
         } else {
+            
             document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
             document.getElementById("chat").readOnly = false;
             document.getElementById('gif').src = './images/Music.gif';
         }
         timeleft -= 1;
     }, 1000);
-    document.getElementById("youtube-audio").click();
 
     fetch('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLB03EA9545DD188C3&key=AIzaSyAO0QSijwnmESBZfxYexkXS3MHE509trLc')
   .then( response => {
@@ -62,7 +62,7 @@ function do_change1() {
       var r=text.indexOf('videoId');
       var s = text.substring(r+11,r+11+11);
         console.log(s);
-        localStorage.setItem("s") = s;
+        localStorage.setItem("s", s);
         document.getElementById("youtube-audio").click();
 
   })
@@ -92,42 +92,52 @@ function do_change2() {
 
 
 function onYouTubeIframeAPIReady(){
-    var e=document.getElementById("youtube-audio");
-    e.setAttribute('data-video', localStorage.getItem('s'));
-    t=document.createElement("img");
-    t.setAttribute("id","youtube-icon"),
-    t.style.cssText="cursor:pointer;cursor:hand";
-    e.appendChild(t);
-    var a=document.createElement("div");
-    a.setAttribute("id","youtube-player");
-    e.appendChild(a);
+    var ctrlq=document.getElementById("youtube-audio");
+
+    // var icon=document.createElement("img");
+    // icon.setAttribute("id","youtube-icon"),
+    // icon.style.cssText="cursor:pointer;cursor:hand";
+    // ctrlq.appendChild(icon);
+
+    var div=document.createElement("div");
+    div.setAttribute("id","youtube-player");
+    ctrlq.appendChild(div);
     //https://i.imgur.com/IDzX9gL.png
     //https://i.imgur.com/quyUPXN.png
     
-var o=function(e){
-    var a=e?"IDzX9gL.png":"quyUPXN.png";
-    t.setAttribute("src","https://i.imgur.com/"+a)
+// var toggleButton = function(play){
+//     var img = play ? "IDzX9gL.png":"quyUPXN.png";
+//     icon.setAttribute("src","https://i.imgur.com/"+img)
+// };
+
+ctrlq.onclick=function(){
+    if(player.getPlayerState()===YT.PlayerState.PLAYING
+    ||player.getPlayerState()===YT.PlayerState.BUFFERING){
+        player.pauseVideo();
+        // toggleButton(false);
+    }else{
+        player.playVideo();
+        // toggleButton(true);
+    }
 };
 
-e.onclick=function(){
-    r.getPlayerState()===YT.PlayerState.PLAYING
-    ||r.getPlayerState()===YT.PlayerState.BUFFERING?(r.pauseVideo(),o(!1)):(r.playVideo(),o(!0))
-};
-
-var r=new YT.Player("youtube-player",{
+var player=new YT.Player("youtube-player",{
     height:"0",width:"0",
-    videoId:e.dataset.video,
+    videoId:ctrlq.dataset.video,
     playerVars:{
-        autoplay:e.dataset.autoplay,
-        loop:e.dataset.loop
+        autoplay:ctrlq.dataset.autoplay,
+        loop:ctrlq.dataset.loop
     },
     events:{
-        onReady:function(e){
-            r.setPlaybackQuality("small"),
-            o(r.getPlayerState()!==YT.PlayerState.CUED)
+        'onReady':function(e){
+            player.setPlaybackQuality("small"),
+            toggleButton(player.getPlayerState()!== YT.PlayerState.CUED)
         },
-        onStateChange:function(e){
-            e.data===YT.PlayerState.ENDED&&o(!1)
+        'onStateChange':function(e){
+            if(e.data === YT.PlayerState.ENDED){
+                toggleButton(false);
+            }
+            
         }
     }
 }

@@ -1,20 +1,18 @@
-import { createServer } from "http";
-import express from 'express';
-import {Server} from 'socket.io';
-const app = express();
-import path from 'path';
-import { fileURLToPath } from 'url';
+const http = require("http");
+const express = require('express');
+const socketio = require('socket.io');
+var request = require("request");
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const app = express();
+
 const clientPath = (__dirname + '/../client');
 console.log('Serving static from + ' + clientPath);
 
 app.use(express.static(clientPath));
 
-const server = createServer(app);
+const server = http.createServer(app);
 
-const io = new Server(server);
+const io = socketio(server);
 
 io.on('connection', (sock) => {
   sock.on('chat1', (text) => {

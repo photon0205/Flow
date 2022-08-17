@@ -1,37 +1,37 @@
 html{
 font-size: 10px;
 font-family: 'Gideon Roman', cursive;
-background-color: #3AAFA9;
+background-color: #00539F;
 }
 body{
  width: 600px;
 margin: auto;
 padding: 20px 20px 20px 20px;
-border: 5px solid white;
-background-color: #2B7178;
+border: 5px solid black;
+background-color: #FF9500;
 }
 h1{
 margin: 0;
 padding: 20px 0;
-color: #3AAFA9;;
-text-shadow: 3px 3px 1px white;
+color: #00539F;;
+text-shadow: 3px 3px 1px black;
 font-size: 60px;
 text-align: center;
-background-color: #2B7178;
+background-color: #FF9500;
 }
 h2{
 margin: 0;
-color: #3AAFA9;;
+color: #00539F;;
 font-size: 40px;
 text-align: center;
-background-color: #2B7178;
+background-color: #FF9500;
 }
 h3{
 margin: 0;
-color: #3AAFA9;;
+color: #00539F;;
 font-size: 30px;
 text-align: center;
-background-color: #2B7178;
+background-color: #FF9500;
 }
 img{
 display: block;
@@ -46,11 +46,11 @@ button{
 width: 200px;
 height: 60px;
 padding:5px 15px; 
-background:#3AAFA9; 
+background:#00539F; 
 border:0 none;
 cursor:pointer;
 border-radius: 10px; 
-color:black;
+color:#FFFFFF;
 font-size: 20px;
 }
 input[type=checkbox] {
@@ -63,10 +63,10 @@ input[type=submit] {
  width: 200px;
 height: 60px;
 padding:5px 15px; 
-background:#3AAFA9; 
+background:#00539F; 
 border:0 none;
 cursor:pointer;
 border-radius: 10px; 
-color:black;
+color:#FFFFFF;
 font-size: 20px;
 }
