@@ -16,10 +16,7 @@
   </div>
 </head>
 
-<body onload="onPageLoad()">
-  <div id="join">
-
-  </div>
+<body>
   <div id="main">
     <form id="yo">
       <button id="start" onclick="do_change1()">Start</button>
@@ -31,62 +28,19 @@
     <div id="grid-container">
       <ol id="participants"></ol>
       <div id="music">
-        <div class="token">
-          <button type="button" value="start2" onclick="requestAuthorization()">Authorization</button>
-        </div>
         <div id="countdown"></div>
         <div class="container">
-          <div id="deviceSection" class="row">
             <div class="col">
-
-              <div class="mb-3" hidden>
-                <label for="devices" class="form-label">Devices</label>
-                <select id="devices" class="form-control">
-                </select>
-              </div>
-
-              <div class="mb-3" hidden>
-                <label for="tracks" class="form-label">Tracks</label>
-                <select id="tracks" class="form-control">
-                </select>
-                <input class="btn btn-primary btn-sm mt-3" type="button" onclick="fetchTracks()" value="Lets Start">
-              </div>
-
-              <div class="mb-3" hidden>
-                <label for="tracks" class="form-label">Album</label>
-                <input id="album" class="form-control">
-              </div>
-
-              <div class="row">
-                <div class="col" hidden>
-                  <input type="button" class="btn btn-dark" onclick="previous()" value="Prev">
-                  <input type="button" class="btn btn-dark" onclick="play()" value="Play">
-                  <input type="button" class="btn btn-dark" onclick="shuffle()" value="Shuffle">
-                  <input type="button" class="btn btn-dark" onclick="pause()" value="Pause">
-                  <input type="button" class="btn btn-dark" onclick="next()" value="Next">
-                </div>
-              </div>
-
-
               <div class="row  mt-3">
-                <div class="col">
-                  <input type="button" class="btn btn-primary btn-sm mt-3" onclick="currentlyPlaying()" hidden
-                    value="Refresh Currently Playing">
-                  <div>
-                    <img id="gif" src="./images/Music.png">
-                    <div id="trackTitle" hidden></div>
-                    <div id="trackArtist" hidden></div>
-                  </div>
-                  <div data-video="s0JTpcDu1Tk" data-autoplay="0" data-loop="1" id="youtube-audio"></div>
-                  <script src="https://www.youtube.com/iframe_api"></script>
-                  <script src="https://cdn.rawgit.com/labnol/files/master/yt.js"></script>
-                </div>
+                <img id="gif" src="./images/Music.png">
+                <div id="trackTitle" hidden></div>
+                <div id="videoId" hidden>JGwWNGJdvx8</div>
               </div>
+              <div id="player"></div>
             </div>
-          </div>
         </div>
       </div>
-      <dev id="answers">
+      <div id="answers">
         <div class="rps-wrapper">
           <ul id="events"></ul>
           <div class="controls">
@@ -98,7 +52,7 @@
             </div>
           </div>
         </div>
-      </dev>
+      </div>
     </div>
   </div>
   <script src="/socket.io/socket.io.js"></script>

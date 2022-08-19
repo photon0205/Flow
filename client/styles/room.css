@@ -53,16 +53,9 @@ display: grid;
 column-gap: 0px;
 grid-template-columns: auto auto auto;
 }
-#tokenSection{
-    display: none;
-}
-
-#deviceSection{
-    display: none;
-}
 
 .container{
-    padding: 20px; 
+    padding: 10px; 
 }
 
 #gif{
