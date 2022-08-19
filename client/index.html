@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles/style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <meta charset="utf-8" />
+    <title></title>
+    <h1>FLOW</h1>
+  </head>
 
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap" rel="stylesheet">
-  <link href="styles/style.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <meta charset="utf-8">
-  <title></title>
-  <h1>FLOW</h1>
-</head>
-
-<body>
-  <img src="./images/Flow.gif" alt="FLOW LOGO" class="center" width="600px" height="200px" margin="0px">
-  <form action="all_rooms.html">
-    <label for="name">Name: </label><br>
-    <input type="text" id="username" name="username" placeholder="Enter name here" />
-    <input type="submit" id='play' value="Play" onclick="passvalue()" />
-  </form>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="app.js"></script>
-</body>
-
+  <body>
+    <img
+      src="./images/Flow.gif"
+      alt="FLOW LOGO"
+      class="center"
+      width="600px"
+      height="200px"
+      margin="0px"
+    />
+    <form action="all_rooms.html">
+      <label for="name">Name: </label><br />
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Enter name here"
+      />
+      <input type="submit" id="play" value="Play" onclick="passvalue()" />
+    </form>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>

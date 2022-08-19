@@ -1,62 +1,73 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles/room.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLOW</title>
+    <div class="ho">
+      <h1>FLOW</h1>
+      <img
+        src="./images/Flow.gif"
+        alt="FLOW LOGO"
+        class="center"
+        width="600px"
+        height="200px"
+        margin="0px"
+      />
+    </div>
+  </head>
 
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap" rel="stylesheet">
-  <link href="styles/room.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FLOW</title>
-  <div class="ho">
-    <h1>FLOW</h1>
-    <img src="./images/Flow.gif" alt="FLOW LOGO" class="center" width="600px" height="200px" margin="0px">
-  </div>
-</head>
-
-<body>
-  <div id="main">
-    <form id="yo">
-      <button id="start" onclick="do_change1()">Start</button>
-      <button id="next" onclick="do_change2()" hidden>Next</button>
-    </form>
-    <form id="tl">
-      <button id="exit">Exit</button>
-    </form>
-    <div id="grid-container">
-      <ol id="participants"></ol>
-      <div id="music">
-        <div id="countdown"></div>
-        <div class="container">
+  <body>
+    <div id="main">
+      <form id="yo">
+        <button id="start" onclick="do_change1()">Start</button>
+        <button id="next" onclick="do_change2()" hidden>Next</button>
+      </form>
+      <form id="tl">
+        <button id="exit">Exit</button>
+      </form>
+      <div id="grid-container">
+        <ol id="participants"></ol>
+        <div id="music">
+          <div id="countdown"></div>
+          <div class="container">
             <div class="col">
-              <div class="row  mt-3">
-                <img id="gif" src="./images/Music.png">
+              <div class="row mt-3">
+                <img id="gif" src="./images/Music.png" />
                 <div id="trackTitle" hidden></div>
                 <div id="videoId" hidden>JGwWNGJdvx8</div>
               </div>
               <div id="player"></div>
             </div>
+          </div>
         </div>
-      </div>
-      <div id="answers">
-        <div class="rps-wrapper">
-          <ul id="events"></ul>
-          <div class="controls">
-            <div class="chat-wrapper">
-              <form id="chat-form">
-                <input id="chat" autocomplete="off" title="chat" />
-                <button id="say">Post</button>
-              </form>
+        <div id="answers">
+          <div class="rps-wrapper">
+            <ul id="events"></ul>
+            <div class="controls">
+              <div class="chat-wrapper">
+                <form id="chat-form">
+                  <input id="chat" autocomplete="off" title="chat" />
+                  <button id="say">Post</button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="room.js"></script>
-</body>
-
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="room.js"></script>
+  </body>
 </html>

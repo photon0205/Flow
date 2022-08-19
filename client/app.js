@@ -1,5 +1,4 @@
-
 function passvalue() {
-    var username = document.getElementById('username').value;
-    localStorage.setItem("naam", username);
+  var username = document.getElementById("username").value;
+  localStorage.setItem("naam", username);
 }
